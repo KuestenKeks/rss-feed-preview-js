@@ -98,6 +98,7 @@ var simpleRssFeedPreview = {};
 		return htmlFragment;
 	}
 
+	// built upon https://www.w3docs.com/snippets/javascript/how-to-strip-html-from-a-string-in-javascript.html
 	function stripHtml(html) {
 		// Create a new div element
 		let temporalDivEl = document.createElement("div");
