@@ -28,6 +28,8 @@ var simpleRssFeedPreview = {};
 
 
 	this.getRssByRequest = function() {
+		// inspired by: https://javascript.info/xmlhttprequest
+
 		// 1. Create a new XMLHttpRequest object
 		let xhr = new XMLHttpRequest();
 
