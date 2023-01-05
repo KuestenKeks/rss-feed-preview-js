@@ -10,7 +10,7 @@ You want to embed a simple preview for the contents of your RSS feed on your web
 ## ❌ Missing features
 This will only display the RSS feed for the domain where it is embedded. Fetching feeds for other websites isn't easily possible for security reasons (I think CORS is the keyword here, see [this documentation](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)). Fetching feeds from other websites would probably have to be done server side or by using 3rd party APIs. If that is what you want, here is a solution involving a 3rd party API call: https://github.com/55sketch/simple-rss 
 
-I was too lazy to implement support Internet Explorer... I hope that isn't really neccessary anymore. `xmlDoc.evaluate` to process XML with XPath won't work with Internet Explorer according to w3schools. In case you need to IE support, see [this example](https://www.w3schools.com/xml/tryit.asp?filename=try_xpath_select_cdnodes).
+I was too lazy to implement support for Internet Explorer... I hope supporting that old hag isn't really neccessary anymore. Using `xmlDoc.evaluate` to traverse XML with XPath won't work with Internet Explorer according to w3schools. In case you need to IE support, see [this example](https://www.w3schools.com/xml/tryit.asp?filename=try_xpath_select_cdnodes).
 
 # 💡 Simple How To
 * copy the contents of `rss-feed-preview.js` into a `<script> ... </script>` element on your website
