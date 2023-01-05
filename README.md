@@ -28,6 +28,27 @@ let pubDateString =  (new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' }).
 
 Replace `en-US` with your prefered locale (e.g. `de-DE`) and dateStyle can be set to: `full`, `long`, `medium` or `short`. See the [MDN documenation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat) for more options.
 
+## Settings
+
+```JavaScript
+// This needs to point to your website's RSS feed. If your feed's full URL is "https://example.org/rss/blog" then "/rss/blog" is what you need to provide here.
+const setting_FeedPath = "/rss/blog";
+
+// The description of your RSS feed's items will be truncated to this length.
+// (And then some more is truncated to make sure there are no sentence fragments remaining at the end of the description preview)
+const setting_MaxPreviewLength = 300;
+
+// how many items of your RSS feed should be displayed?
+// (if you provide a number that's larger than the amount of items in your feed, then only the available feed items will be displayed)
+const setting_MaxEntries = 3;
+
+// Try setting this to 'true' if your oldest RSS entries are displayed instead of the most current ones.
+// (By default the first entries contained in the RSS XML are displayed. These are usually the newest ones, but with some feeds the last entries are.)
+const setting_ReverseOrder = false;
+
+// The HTML template into which each RSS item's content will be inserted into. You might want to customize this template to fit your needs.
+const setting_HtmlTemplate = template`<h3><a href="${"link"}">${"title"} (${"pubDate"})</a></h3> <p>${"description"} ⚬ <strong><a href="${"link"}">Continue reading...</a></p></strong>`;
+```
 
 # Disclaimer 😬
 I'm not an experienced web developer, I only know some HTML basics and this was the first time I tried to do anything meaningful with JavaScript. This was hacked together over a few afternoons because I needed it for a personal project. With a lot of try and error and web searches. 
