@@ -5,11 +5,10 @@
 </head>
 <body>
 
-	<div id="rss-feed-container"></div>
+<div id="rss-feed-container"></div>
 
-	<!-- For local testing only - delete before deploying on your website -->
-	<input type="file" onchange="simpleRssFeedPreview.onFileLoad()"/>
-	
+<!-- For local testing only - delete before deploying on your website -->
+<input type="file" onchange="simpleRssFeedPreview.onFileLoad()"/>
 
 
 <script type = "text/javascript">
@@ -42,10 +41,26 @@
 
 		const rssFeedContainer = document.getElementById("rss-feed-container");
 
+		// For local testing you can upload an RSS feed as an xml file
+		// needs an input element like this:
+		//   <input type="file" onchange="simpleRssFeedPreview.onFileLoad()"/>
+		// you may delete this function before deploying the script to your website
+		this.onFileLoad = function() {
+			const [file] = document.querySelector('input[type=file]').files;
+			const reader = new FileReader();
+
+			reader.addEventListener("load", () => {
+				createHtmlPreviewForRssFeed(reader.result);
+			}, false);
+
+			if (file) {
+				reader.readAsText(file);
+			}
+		}
 
 		this.getRssByRequest = function() {
 			// inspired by: https://javascript.info/xmlhttprequest
-			
+
 			// 1. Create a new XMLHttpRequest object
 			let xhr = new XMLHttpRequest();
 
