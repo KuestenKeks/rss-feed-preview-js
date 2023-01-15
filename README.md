@@ -1,10 +1,10 @@
 # What's this? 🤔
-You want to embed a simple preview for the contents of your RSS feed on your website? Like an overview of your latest blog articles? Then these few lines of JavaScript might help you out 😉.
+You want to embed a simple preview for the contents of your RSS feed on your website? Like an overview of your latest blog articles? But you have a simple webhoster that doesn't allow to generate this on the server side? Then these few lines of client side JavaScript might help you out 😉.
 
 ## ✔ Features
+* Easy to add to any website where you have the ability to add HTML snippets
 * No dependecies on 3rd party APIs or libraries! This works completely standalone and without any third party calls.
 * Therefore very privacy friendly :)
-* easy to add to any website where you have the ability to add HTML snippets
 * The preview is stripped down to simple text. The first few sentences will be included while cutoff sentence fragments are avoided.
 
 ## ❌ Missing features
