@@ -120,7 +120,7 @@
 			// (which have to end with at least one dot, question mark or exclamation mark. But "... St." is not an accepted sentence ending because it can be part of location names, like "St. Petersburg".)
 			let descriptionPreview = description.slice(0,setting_MaxPreviewLength);
 			let firstSentences = descriptionPreview.match(/.*(?<!\bSt)[\.\?!]/s);
-			descriptionPreview = firstSentences ?? descriptionPreview + '...'; // "firstSentences" might be null, then we'll have to live with a cut off sentence fragment
+			descriptionPreview = (firstSentences ?? descriptionPreview) + ' …'; // "firstSentences" might be null, then we'll have to live with a cut off sentence fragment
 
 			let pubDate = new Date(itemNode.getElementsByTagName("pubDate")[0].textContent);
 			let pubDateString =  (new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' }).format(pubDate).toString());
