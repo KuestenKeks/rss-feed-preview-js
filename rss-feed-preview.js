@@ -20,7 +20,7 @@ var simpleRssFeedPreview = {};
 	const setting_ReverseOrder = false;
 
 	// The HTML template into which each RSS item's content will be inserted into. You might want to customize this template to fit your needs.
-	const setting_HtmlTemplate = template`<h3><a href="${"link"}">${"title"} (${"pubDate"})</a></h3> <p>${"description"} ⚬ <strong><a href="${"link"}">Continue reading...</a></p></strong>`;
+	const setting_HtmlTemplate = template`<h3><a href="${"link"}">${"title"} (${"pubDate"})</a></h3> <p>${"description"} … <strong><a href="${"link"}">➜ Continue reading</a></p></strong>`;
 
 	// ============================================================================================================================================================================================
 
